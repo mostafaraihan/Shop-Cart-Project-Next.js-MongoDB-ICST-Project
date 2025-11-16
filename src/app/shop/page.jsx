@@ -1,11 +1,12 @@
 "use client";
 
+import { useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
-import { useSearchParams } from "next/navigation";
 import ProductCard from "@/app/component/ProductCard";
 import { useCart } from "@/app/component/CartContext";
 import { getBaseUrl } from "@/app/utils/api";
 import PageSwitch from "@/app/component/PageSwitch";
+import { useSearchParams } from "next/navigation";
 
 const getProduct = async (page) => {
   const baseUrl = getBaseUrl();
@@ -13,7 +14,6 @@ const getProduct = async (page) => {
   if (!res.ok) throw new Error("Failed to fetch products");
 
   const data = await res.json();
-  console.log("Fetched products:", data);
   return data;
 };
 
@@ -24,6 +24,17 @@ const Shop = () => {
   const [products, setProducts] = useState([]);
   const [totalPages, setTotalPages] = useState(1);
   const { addToCart } = useCart();
+  const { data: session } = useSession();
+
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    if (session) {
+      setIsLoggedIn(true); 
+    } else {
+      setIsLoggedIn(false);
+    }
+  }, [session]);
 
   useEffect(() => {
     getProduct(page)
@@ -36,11 +47,6 @@ const Shop = () => {
 
   return (
     <div style={{ padding: "2rem" }}>
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
       <div
         style={{
           display: "grid",
@@ -54,6 +60,7 @@ const Shop = () => {
               key={product._id}
               product={product}
               onAddToCart={() => addToCart(product)}
+              isLoggedIn={isLoggedIn} 
             />
           ))
         ) : (
@@ -66,6 +73,7 @@ const Shop = () => {
 };
 
 export default Shop;
+
 
 
 // "use client";
