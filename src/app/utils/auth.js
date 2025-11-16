@@ -4,9 +4,6 @@ import User from "@/app/models/user";
 import bcrypt from "bcrypt";
 import connectDb from "./db";
 
-console.log("NEXTAUTH_SECRET:", process.env.NEXTAUTH_SECRET);
-
-
 export const authOptions = {
 	session: {
 		strategy: "jwt",
@@ -19,7 +16,6 @@ export const authOptions = {
 				password: { label: "Password", type: "password" },
 			},
 			async authorize(credentials) {
-				console.log("I am being called");
 
 				if (!credentials.email || !credentials.password) {
 					throw new Error("Email and PassWord are required");

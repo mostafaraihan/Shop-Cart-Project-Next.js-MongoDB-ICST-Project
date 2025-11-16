@@ -1,0 +1,32 @@
+[{
+  "_id": {
+    "$oid": "690a23be24f8018da36c78f4"
+  },
+  "name": "mostafaraihan",
+  "email": "m.raihan.computerscience@gmail.com",
+  "password": "$2b$10$TfRlbEQ9kahCBekrD/uBiOS2PgJBy/5im8zLcAmadFUVnhdiyafUm",
+  "role": "admin",
+  "createdAt": {
+    "$date": "2025-11-04T16:03:10.509Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-04T16:03:10.509Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69134a724a78ca4de974eb0d"
+  },
+  "name": "Mostafa Raihan",
+  "email": "mostafaraihan.bd@gmail.com",
+  "password": "$2b$10$rqnjfzCsmb6Z4pqid0rvFe8.VDmifRVK5Cr30d9YdgHIzgJiP3ax.",
+  "role": "user",
+  "createdAt": {
+    "$date": "2025-11-11T14:38:42.105Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-11T14:38:42.105Z"
+  },
+  "__v": 0
+}]

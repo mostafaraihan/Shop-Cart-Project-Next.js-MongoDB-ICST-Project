@@ -4,7 +4,7 @@ import { useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
 import ProductCard from "@/app/component/ProductCard";
 import { useCart } from "@/app/component/CartContext";
-import { getBaseUrl } from "@/app/utils/api";
+import { getBaseUrl } from "@/app/utils/config";
 import PageSwitch from "@/app/component/PageSwitch";
 import { useSearchParams } from "next/navigation";
 
@@ -75,8 +75,6 @@ const Shop = () => {
 export default Shop;
 
 
-
-// "use client";
 
 // import { useEffect, useState } from "react";
 // import ProductCard from "@/app/component/ProductCard";

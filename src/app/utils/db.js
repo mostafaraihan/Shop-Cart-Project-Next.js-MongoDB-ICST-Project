@@ -11,18 +11,19 @@
 
 
 import mongoose from "mongoose";
-import getMongoUri from "./api";
+import { getMongoUri } from "./config"; 
 
 const connectDB = async () => {
-    if (mongoose.connection.readyState >= 1) return;
-
-    const uri = getMongoUri();
+    if (mongoose.connection.readyState >= 1) return; // Already connected
 
     try {
-        await mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+        await mongoose.connect(getMongoUri(), {
+            useNewUrlParser: true,
+            useUnifiedTopology: true
+        });
         console.log("MongoDB Connected");
     } catch (error) {
-        console.error(" MongoDB Connection Error:", error);
+        console.error("MongoDB Connection Error:", error);
         throw error;
     }
 };

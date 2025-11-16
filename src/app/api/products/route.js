@@ -29,8 +29,8 @@ export async function GET(req) {
 	await connectDb();
 	const { searchParams } = new URL(req.url);
 
-	const page = searchParams.get("page") || {};
-	console.log(page, "page");
+	const page = searchParams.get("page") || "1";
+	const currentPage = Number(page) || 1;
 
 	const pageSize = 4;
 	try {

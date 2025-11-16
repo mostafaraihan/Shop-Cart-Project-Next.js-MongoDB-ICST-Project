@@ -1,7 +1,7 @@
 "use server";
 
 import { updateTag } from "next/cache";
-import { getBaseUrl } from "@/app/utils/api";
+import { getBaseUrl } from "@/app/utils/config";
 
 export const getProduct = async (page) => {
 	const res = await fetch(`${getBaseUrl()}/api/products?page=${page}`);

@@ -10,14 +10,12 @@ export async function POST(req) {
     await connectDb();
 
     try {
-        // ১. Request থেকে cartItems নেওয়া
         const { cartItems } = await req.json();
 
         if (!cartItems || !Array.isArray(cartItems) || cartItems.length === 0) {
             return NextResponse.json({ error: "Invalid cart items" }, { status: 400 });
         }
 
-        // ২. User verification
         const token = await getToken({ req, secret: process.env.NEXTAUTH_SECRET });
         const user = token?.user;
 
@@ -25,7 +23,6 @@ export async function POST(req) {
             return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
         }
 
-        // ৩. Products fetch
         const productIds = cartItems.map(item => item._id);
         const products = await Product.find({ _id: { $in: productIds } });
 
@@ -33,7 +30,6 @@ export async function POST(req) {
             return NextResponse.json({ error: "Some products not found" }, { status: 404 });
         }
 
-        // ৪. Stripe line items preparation
         const lineItems = cartItems.map(item => {
             const product = products.find(p => p._id.toString() === item._id);
             if (!product) throw new Error(`Product ${item._id} not found`);
@@ -42,23 +38,22 @@ export async function POST(req) {
 
             return {
                 price_data: {
-                    currency: "bdt", // ✅ BDT currency
+                    currency: "bdt", 
                     product_data: {
                         name: product.title,
                         images: product.image ? [product.image] : [],
                     },
-                    unit_amount: Math.round(product.price * 100), // 1 ৳ = 100 paisa
+                    unit_amount: Math.round(product.price * 100), 
                 },
                 quantity,
             };
         });
 
-        // ৫. Stripe session create
         const session = await stripe.checkout.sessions.create({
             line_items: lineItems,
             mode: "payment",
             payment_method_types: ["card"],
-            success_url: process.env.NEXTAUTH_URL + "/success",
+            success_url: process.env.NEXTAUTH_URL + "/",
             cancel_url: process.env.NEXTAUTH_URL + "/cart",
             client_reference_id: user.id.toString(),
             customer_email: user.email,

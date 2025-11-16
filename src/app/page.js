@@ -1,3 +1,5 @@
+"use client"
+
 import Link from "next/link";
 import Shop from "./shop/page";
 import styles from "./HomePage.module.css";
