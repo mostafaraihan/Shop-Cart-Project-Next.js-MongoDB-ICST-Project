@@ -20,7 +20,6 @@ const Nav = () => {
         <Link href="/" className="logo">
           Raihan Interactive Shop
         </Link>
-
         {/* MENU CENTER */}
         <ul className={menuOpen ? "active" : ""}>
           <li>
