@@ -11,17 +11,62 @@ const Nav = () => {
   const { cart } = useCart();
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const handleLogout = () => {
-    signOut({ callbackUrl: "/" });
-  };
+  const handleLogout = () => signOut({ callbackUrl: "/" });
 
   return (
     <nav className="navbar">
       <div className="navbar-container">
+        {/* LOGO LEFT */}
         <Link href="/" className="logo">
           Raihan Interactive Shop
         </Link>
 
+        {/* MENU CENTER */}
+        <ul className={menuOpen ? "active" : ""}>
+          <li>
+            <Link href="/" onClick={() => setMenuOpen(false)}>Home</Link>
+          </li>
+          <li>
+            <Link href="/shop" onClick={() => setMenuOpen(false)}>Shop</Link>
+          </li>
+          <li>
+            <Link href="/cart" onClick={() => setMenuOpen(false)}>Cart ({cart.length})</Link>
+          </li>
+
+          {/* MOBILE BUTTONS */}
+          {menuOpen && (
+            <>
+              {session ? (
+                <li>
+                  <button onClick={handleLogout}>Logout</button>
+                </li>
+              ) : (
+                <>
+                  <li>
+                    <Link href="/login" onClick={() => setMenuOpen(false)}>Login</Link>
+                  </li>
+                  <li>
+                    <Link href="/register" onClick={() => setMenuOpen(false)}>Sign Up</Link>
+                  </li>
+                </>
+              )}
+            </>
+          )}
+        </ul>
+
+        {/* BUTTONS RIGHT */}
+        <div className="navbar-right">
+          {session ? (
+            <button onClick={handleLogout}>Logout</button>
+          ) : (
+            <>
+              <Link href="/login">Login</Link>
+              <Link href="/register">Sign Up</Link>
+            </>
+          )}
+        </div>
+
+        {/* HAMBURGER */}
         <div
           className={`hamburger ${menuOpen ? "active" : ""}`}
           onClick={() => setMenuOpen(!menuOpen)}
@@ -30,50 +75,6 @@ const Nav = () => {
           <span></span>
           <span></span>
         </div>
-
-        <ul className={menuOpen ? "active" : ""}>
-          <li>
-            <Link href="/shop" onClick={() => setMenuOpen(false)}>
-              Shop
-            </Link>
-          </li>
-
-          {session?.user?.role === "admin" && (
-            <li>
-              <Link
-                href="/dashboard/admin/add-products"
-                onClick={() => setMenuOpen(false)}
-              >
-                Add Product
-              </Link>
-            </li>
-          )}
-
-          <li>
-            <Link href="/cart" onClick={() => setMenuOpen(false)}>
-              Cart ({cart.length})
-            </Link>
-          </li>
-
-          {session ? (
-            <li>
-              <button onClick={handleLogout}>Logout</button>
-            </li>
-          ) : (
-            <>
-              <li>
-                <Link href="/login" onClick={() => setMenuOpen(false)}>
-                  Login
-                </Link>
-              </li>
-              <li>
-                <Link href="/register" onClick={() => setMenuOpen(false)}>
-                  Sign Up
-                </Link>
-              </li>
-            </>
-          )}
-        </ul>
       </div>
     </nav>
   );

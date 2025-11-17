@@ -18,8 +18,8 @@
 }
 
 .ingredient__image {
-  width: 110%;
-  height: 280px;
+  width: 115%;
+  height: auto;
   overflow: hidden;
   border-radius: 12px;
   margin-bottom: 0.75rem;

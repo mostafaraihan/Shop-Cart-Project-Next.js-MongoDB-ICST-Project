@@ -6,8 +6,9 @@ import ProductCard from "@/app/component/ProductCard";
 import { useCart } from "@/app/component/CartContext";
 import PageSwitch from "@/app/component/PageSwitch";
 import { useSearchParams } from "next/navigation";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-// Fetch products from API
+
 const getProduct = async (page) => {
   try {
     const res = await fetch(`/api/products?page=${page}`);
@@ -46,34 +47,33 @@ const Shop = () => {
   }, [page]);
 
   return (
-    <div style={{ padding: "2rem" }}>
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
-          gap: "1.5rem",
-        }}
-      >
-        {products.length > 0 ? (
-          products.map((product) => (
+  <div className="bg-dark text-light min-vh-100">
+    <div className="container py-5">
+      {products.length > 0 ? (
+        <div className="row g-4">
+          {products.map((product) => (
             <ProductCard
               key={product._id}
               product={product}
               onAddToCart={() => addToCart(product)}
               isLoggedIn={isLoggedIn}
             />
-          ))
-        ) : (
-          <p>No products available.</p>
-        )}
-      </div>
+          ))}
+        </div>
+      ) : (
+        <p className="text-center">No products available.</p>
+      )}
 
-      <PageSwitch totalPages={totalPages} currentPage={page} pathname="/shop" />
+      <div className="mt-4 d-flex justify-content-center">
+        <PageSwitch totalPages={totalPages} currentPage={page} pathname="/shop" />
+      </div>
     </div>
+  </div>
   );
 };
 
 export default Shop;
+
 
 
 // import { useEffect, useState } from "react";

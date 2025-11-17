@@ -1,5 +1,6 @@
 "use client";
 import "./css/ProductCard.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const ProductCard = ({ product, onAddToCart, isLoggedIn }) => {
   const handleAddClick = () => {
@@ -13,28 +14,25 @@ const ProductCard = ({ product, onAddToCart, isLoggedIn }) => {
   };
 
   return (
-    <div>
-      <br /><br /><br /><br /><br />
+    <div className="col-12 col-sm-6 col-md-4 col-lg-3">
       <div className="ingredient">
-      <div className="ingredient__title">
-        <h3>{product.title}</h3>
+        <div className="ingredient__image">
+          <figure>
+            <img src={product.image} alt={product.title} />
+          </figure>
+        </div>
+        <div className="ingredient__title">
+          <h3>{product.title}</h3>
+        </div>
+        <div className="ingredient__content">
+          <p className="price">৳ {product.price}</p>
+        </div>
+        <div className="ingredient__btn">
+          <button className="btn-white" onClick={handleAddClick}>
+            Add to Cart
+          </button>
+        </div>
       </div>
-      <div className="ingredient__image">
-        <figure>
-          <img src={product.image} alt={product.title} />
-        </figure>
-      </div>
-      <div className="ingredient__content">
-        <p className="price">
-          <span>৳ {product.price}</span>
-        </p>
-      </div>
-      <div className="ingredient__btn">
-        <button className="btn-white" onClick={handleAddClick}>
-          Add to Cart
-        </button>
-      </div>
-    </div>
     </div>
   );
 };

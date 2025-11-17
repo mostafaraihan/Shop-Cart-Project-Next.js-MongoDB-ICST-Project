@@ -1,11 +1,12 @@
 .homePage {
-  font-family: arial;
+  font-family: Arial, sans-serif;
   background-color: #121212;
   color: #f0f0f0;
   margin: 0;
   padding: 0;
 }
 
+/* HERO */
 .hero {
   background-color: black;
   height: 50vh;
@@ -16,13 +17,14 @@
 }
 
 .heroOverlay {
-  background:#000;
+  background: rgba(0,0,0,0.7);
   width: 80%;
   height: 80%;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 50px;
+  text-align: center;
 }
 
 .heroContent h1 {
@@ -51,6 +53,7 @@
   border: 2px solid #ff6600;
 }
 
+/* SECTION TITLES */
 .sectionTitle {
   text-align: center;
   margin: 2rem 0 1rem;
@@ -58,6 +61,7 @@
   color: #fff;
 }
 
+/* FEATURES */
 .features {
   padding: 4rem 2rem;
   background-color: #1e1e1e;
@@ -77,13 +81,14 @@
   border-radius: 10px;
   width: 250px;
   text-align: center;
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
 }
 
-.featureCard:hover {
+.featureCard:hover
+{
   transform: translateY(-10px);
   box-shadow: 0 0 25px #ff6600;
-  background-color:#ff6600;
+  background-color: #ff6600;
 }
 
 .icon {
@@ -92,12 +97,13 @@
 
 .title {
   padding-top: 15px;
-  color: #ff6600;
+  color: rgba(107, 223, 29, 1);
 }
 
+/* VIEW ALL BUTTON */
 .viewAllWrapper {
   text-align: center;
-  margin-top: rem;
+  margin-top: 2rem;
 }
 
 .btnViewAll {
@@ -108,7 +114,7 @@
   border-radius: 5px;
   cursor: pointer;
   font-weight: bold;
-  transition: background 0.3s;
+  transition: 0.3s;
 }
 
 .btnViewAll:hover {
@@ -116,6 +122,7 @@
   border: 2px solid #ff6600;
 }
 
+/* TESTIMONIALS */
 .testimonials {
   background-color: #1a1a1a;
   padding: 4rem 2rem;
@@ -135,13 +142,13 @@
   width: 300px;
   text-align: center;
   font-style: italic;
-  transition: transform 0.3s;
+  transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
 }
 
 .testimonialCard:hover {
   transform: translateY(-5px);
   box-shadow: 0 0 25px #ff6600;
-  background-color:#000;
+  background-color: #000;
 }
 
 .testimonialCard h4 {
@@ -149,6 +156,7 @@
   color: #ff6600;
 }
 
+/* FOOTER */
 .footer {
   background-color: #111;
   color: #fff;
@@ -197,16 +205,40 @@
   color: #ff6600;
 }
 
-@media (min-width: 768px) {
-  .footerBottom {
-    flex-direction: row;
-    justify-content: space-between;
-    width: 80%;
-    margin: 2rem auto 0;
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .heroContent h1 {
+    font-size: 2.5rem;
+  }
+
+  .heroContent p {
+    font-size: 1rem;
+  }
+
+  .featureCard {
+    width: 45%;
+  }
+
+  .testimonialCard {
+    width: 45%;
   }
 }
 
 @media (max-width: 768px) {
+  .heroOverlay {
+    width: 90%;
+    height: auto;
+    padding: 30px;
+  }
+
+  .heroContent h1 {
+    font-size: 2rem;
+  }
+
+  .heroContent p {
+    font-size: 0.9rem;
+  }
+
   .featureCards,
   .testimonialCards {
     flex-direction: column;
@@ -216,5 +248,9 @@
   .featureCard,
   .testimonialCard {
     width: 90%;
+  }
+
+  .footerBottom {
+    flex-direction: column;
   }
 }
