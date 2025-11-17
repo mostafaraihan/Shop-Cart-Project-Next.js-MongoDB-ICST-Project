@@ -1,7 +1,9 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Nav from "@/app/component/Nav";
-import Providers from "@/app/component/Providers"; 
+import Providers from "@/app/component/Providers";
+
+export const dynamic = "force-dynamic";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -23,7 +25,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <Providers>
-          <Nav /> 
+          <Nav />
           {children}
         </Providers>
       </body>

@@ -31,7 +31,7 @@ export async function GET(req) {
 
 	const page = searchParams.get("page") || "1";
 
-	const pageSize = 4;
+	const pageSize = 10;
 	try {
 		const currentPage = Number(page) || 1;
 		const skip = (currentPage - 1) * pageSize;

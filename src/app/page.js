@@ -1,10 +1,10 @@
-"use client";
-
+import { connection, Connection } from "next/server";
 import Link from "next/link";
 import Shop from "@/app/shop/page";
 import styles from "./HomePage.module.css";
 
-export default function HomePage() {
+export default async function HomePage() {
+  await connection()
   return (
     <div className={styles.homePage}>
       <section className={styles.hero}>
