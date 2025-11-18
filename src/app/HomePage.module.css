@@ -21,7 +21,7 @@
 }
 
 .hero {
-  background-color: black;
+  background-color: #000;
   height: 50vh;
   display: flex;
   align-items: center;
@@ -30,7 +30,7 @@
 }
 
 .heroOverlay {
-  background: #f60;
+  background: #000;
   width: 80%;
   height: 80%;
   display: flex;
