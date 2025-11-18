@@ -11,6 +11,7 @@ const ProductCard = ({ product, onAddToCart, isLoggedIn }) => {
     }
 
     onAddToCart(product); 
+    alert(`${product.title} Added Cart`);
   };
 
   return (

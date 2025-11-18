@@ -29,7 +29,7 @@ const PageSwitch = ({ totalPages, pathname }) => {
                 className={`${styles.pageButton} ${
                   page === currentPage ? styles.active : ""
                 }`}
-                disabled={page === currentPage} // optional: disable current page
+                disabled={page === currentPage} 
               >
                 {page}
               </button>

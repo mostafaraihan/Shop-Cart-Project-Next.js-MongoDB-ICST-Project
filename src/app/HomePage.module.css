@@ -1,3 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Story+Script&display=swap');
+
+.storyScript {
+  font-family: 'Story Script', sans-serif;
+  font-style: normal;
+  font-size: 3rem;
+  color:#000;
+  font-weight:600;
+  box-shadow: 0 0 25px #fff;
+  padding:5px 10px;
+  border-radius:15px;
+  cursor:pointer
+}
+
 .homePage {
   font-family: Arial, sans-serif;
   background-color: #121212;
@@ -6,7 +20,6 @@
   padding: 0;
 }
 
-/* HERO */
 .hero {
   background-color: black;
   height: 50vh;
@@ -17,7 +30,7 @@
 }
 
 .heroOverlay {
-  background: rgba(0,0,0,0.7);
+  background: #f60;
   width: 80%;
   height: 80%;
   display: flex;
@@ -25,20 +38,15 @@
   justify-content: center;
   padding: 50px;
   text-align: center;
-}
-
-.heroContent h1 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
+  border-radius:15px;
 }
 
 .heroContent p {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
+  font-size: 1.3rem;
 }
 
 .btnHero {
-  background-color: #ff6600;
+  background-color: #000;
   border: none;
   padding: 1rem 2rem;
   color: #fff;
@@ -49,11 +57,11 @@
 }
 
 .btnHero:hover {
-  background-color: #000;
-  border: 2px solid #ff6600;
+  background-color: #fff;
+  border: 2px solid #000;
+  color:#f60;
 }
 
-/* SECTION TITLES */
 .sectionTitle {
   text-align: center;
   margin: 2rem 0 1rem;
@@ -61,7 +69,6 @@
   color: #fff;
 }
 
-/* FEATURES */
 .features {
   padding: 4rem 2rem;
   background-color: #1e1e1e;
@@ -97,7 +104,7 @@
 
 .title {
   padding-top: 15px;
-  color: rgba(107, 223, 29, 1);
+  color: #0f0;
 }
 
 .viewAllWrapper {
@@ -187,22 +194,29 @@
 .footerBottom {
   margin-top: 2rem;
   display: flex;
-  flex-direction: column;
   align-items: center;
+  justify-content: space-between;
+}
+
+.footerBottom p {
+  margin: 0;
   font-size: 1rem;
-  gap: 0.5rem;
+  padding-left: 25px;
+  color: #f60;
 }
 
 .social a {
   margin: 0 0.5rem;
   color: #fff;
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .social a:hover {
   color: #ff6600;
+  transform: scale(1.2);
 }
+
 
 /* RESPONSIVE */
 @media (max-width: 1024px) {

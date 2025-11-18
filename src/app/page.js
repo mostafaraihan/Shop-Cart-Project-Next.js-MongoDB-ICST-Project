@@ -3,14 +3,16 @@ import Link from "next/link";
 import Shop from "@/app/shop/page";
 import styles from "./HomePage.module.css";
 
+
 export default async function HomePage() {
+  
   await connection()
   return (
     <div className={styles.homePage}>
       <section className={styles.hero}>
         <div className={styles.heroOverlay}>
           <div className={styles.heroContent}>
-            <h1 className={styles.heroTitle}>Welcome to Raihan Interactive Shop</h1>
+            <h1 className={styles.storyScript}>Welcome to Raihan Interactive Shop</h1>
             <p className={styles.heroSubtitle}>
               Your one-stop shop for amazing products delivered fast.
             </p>
@@ -26,7 +28,6 @@ export default async function HomePage() {
         <div className={styles.featureCards}>
           <div className={styles.featureCard}>
             <span className={styles.icon}>🚚</span>
-            <hr/>
             <h3 className={styles.title}>Fast Delivery</h3>
             <p>Get your products delivered to your door in record time.</p>
           </div>

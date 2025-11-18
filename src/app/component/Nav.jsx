@@ -31,6 +31,16 @@ const Nav = () => {
           <li>
             <Link href="/cart" onClick={() => setMenuOpen(false)}>Cart ({cart.length})</Link>
           </li>
+          {session?.user?.role === "admin" && (
+            <li>
+              <Link
+                href="/dashboard/admin/add-products"
+                onClick={() => setMenuOpen(false)}
+              >
+                Add Product
+              </Link>
+            </li>
+          )}
 
           {/* MOBILE BUTTONS */}
           {menuOpen && (

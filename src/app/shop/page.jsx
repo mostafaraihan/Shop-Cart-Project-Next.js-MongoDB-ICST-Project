@@ -8,7 +8,6 @@ import PageSwitch from "@/app/component/PageSwitch";
 import { useSearchParams } from "next/navigation";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-
 const getProduct = async (page) => {
   try {
     const res = await fetch(`/api/products?page=${page}`);
