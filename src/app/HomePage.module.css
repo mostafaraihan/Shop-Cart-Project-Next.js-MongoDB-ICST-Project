@@ -46,7 +46,7 @@
 }
 
 .btnHero {
-  background-color: #000;
+  background-color: #f60;
   border: none;
   padding: 1rem 2rem;
   color: #fff;
@@ -57,8 +57,8 @@
 }
 
 .btnHero:hover {
-  background-color: #fff;
-  border: 2px solid #000;
+  background-color: #000;
+  border: 2px solid #f60;
   color:#f60;
 }
 
