@@ -29,22 +29,22 @@ export default async function HomePage() {
           <div className={styles.featureCard}>
             <span className={styles.icon}>🚚</span>
             <h3 className={styles.title}>Fast Delivery</h3>
-            <p>Get your products delivered to your door in record time.</p>
+            <p className={styles.title}>Get your products delivered to your door in record time.</p>
           </div>
           <div className={styles.featureCard}>
             <span className={styles.icon}>💳</span>
             <h3 className={styles.title}>Secure Payments</h3>
-            <p>All transactions are 100% secure and encrypted.</p>
+            <p className={styles.title}>All transactions are 100% secure and encrypted.</p>
           </div>
           <div className={styles.featureCard}>
             <span className={styles.icon}>⭐</span>
             <h3 className={styles.title}>Top Quality</h3>
-            <p>We offer only the best products from trusted brands.</p>
+            <p className={styles.title}>We offer only the best products from trusted brands.</p>
           </div>
           <div className={styles.featureCard}>
             <span className={styles.icon}>📞</span>
             <h3 className={styles.title}>24/7 Support</h3>
-            <p>Our support team is always here to help you anytime.</p>
+            <p className={styles.title}>Our support team is always here to help you anytime.</p>
           </div>
         </div>
       </section>
@@ -81,17 +81,12 @@ export default async function HomePage() {
 
       <footer className={styles.footer}>
         <div className={styles.footerContainer}>
-          <h2 className={styles.footerTitle}>Ready to find your favorite products?</h2>
-          <Link href="/shop">
-            <button className={styles.footerBtn}>Shop Now</button>
-          </Link>
-
           <div className={styles.footerBottom}>
             <p>&copy; {new Date().getFullYear()} Mostafa Raihan. All rights reserved.</p>
             <div className={styles.social}>
-              <a href="https://www.facebook.com/Mostafa.Raihan.07/" target="_blank" rel="noopener noreferrer">Facebook</a>
-              <a href="https://www.linkedin.com/in/mostafaraihanbd/" target="_blank" rel="noopener noreferrer">Linkedin</a>
-              <a href="https://github.com/MostafaRaihan" target="_blank" rel="noopener noreferrer">GitHub</a>
+              <a href="https://www.facebook.com/Mostafa.Raihan.07/" target="_blank" rel="noopener noreferrer"><img src="https://img.icons8.com/?size=100&id=118497&format=png&color=000000" alt="Facebook" /> Facebook</a>
+              <a href="https://www.linkedin.com/in/mostafa-raihan/" target="_blank" rel="noopener noreferrer"> <img src="https://img.icons8.com/?size=100&id=3tC9EQumUAuq&format=png&color=000000" alt="Linkedin" /> Linkedin</a>
+              <a href="https://github.com/mostafaraihan" target="_blank" rel="noopener noreferrer"><img src="https://img.icons8.com/?size=100&id=13930&format=png&color=000000" alt="GitHub" /> GitHub</a>
             </div>
           </div>
         </div>

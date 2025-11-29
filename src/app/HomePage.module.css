@@ -6,22 +6,23 @@
   font-size: 3rem;
   color:#f60;
   font-weight:600;
-  box-shadow: 0 0 25px #fff;
-  padding:5px 10px;
+  padding:10px 20px;
   border-radius:15px;
-  cursor:pointer
+  background-color: #fff;
+  box-shadow: 0 0 5px #000;
+  transition: 0.3s;
 }
 
 .homePage {
   font-family: Arial, sans-serif;
-  background-color: #121212;
+  background-color: #fff;
   color: #f0f0f0;
   margin: 0;
   padding: 0;
 }
 
 .hero {
-  background-color: #000;
+  background-color: #fff;
   height: 50vh;
   display: flex;
   align-items: center;
@@ -30,19 +31,19 @@
 }
 
 .heroOverlay {
-  background: #000;
+  background: #fff;
   width: 80%;
   height: 80%;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 50px;
   text-align: center;
   border-radius:15px;
 }
 
 .heroContent p {
-  font-size: 1.3rem;
+  font-size: 1.5rem;
+  color:#000;
 }
 
 .btnHero {
@@ -51,9 +52,10 @@
   padding: 1rem 2rem;
   color: #fff;
   font-weight: bold;
-  border-radius: 10px;
+  border-radius: 15px;
   cursor: pointer;
-  transition: 0.3s;
+  transition: 0.5s;
+  border: 2px solid #000;
 }
 
 .btnHero:hover {
@@ -66,12 +68,12 @@
   text-align: center;
   margin: 2rem 0 1rem;
   font-size: 2rem;
-  color: #fff;
+  color: #000;
 }
 
 .features {
   padding: 4rem 2rem;
-  background-color: #1e1e1e;
+  background-color: #f0f0f0;
 }
 
 .featureCards {
@@ -83,19 +85,20 @@
 }
 
 .featureCard {
-  background-color: #2c2c2c;
+  background-color: #fff;
   padding: 2rem;
   border-radius: 10px;
   width: 250px;
   text-align: center;
   transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+  box-shadow: 0 0 5px #000;
 }
 
-.featureCard:hover
-{
+.featureCard:hover{
   transform: translateY(-10px);
   box-shadow: 0 0 25px #ff6600;
   background-color: #ff6600;
+  color:#fff;
 }
 
 .icon {
@@ -103,8 +106,7 @@
 }
 
 .title {
-  padding-top: 15px;
-  color: #0f0;
+  color: #000;
 }
 
 .viewAllWrapper {
@@ -117,10 +119,11 @@
   color: #fff;
   border: none;
   padding: 0.8rem 1.5rem;
-  border-radius: 5px;
+  border-radius: 10px;
   cursor: pointer;
   font-weight: bold;
   transition: 0.3s;
+  border: 2px solid #000;
 }
 
 .btnViewAll:hover {
@@ -128,9 +131,12 @@
   border: 2px solid #ff6600;
 }
 
-/* TESTIMONIALS */
+.featuredProducts{
+  background-color:#fff;
+}
+
 .testimonials {
-  background-color: #1a1a1a;
+  background-color: #f0f0f0;
   padding: 4rem 2rem;
 }
 
@@ -142,57 +148,34 @@
 }
 
 .testimonialCard {
-  background-color: #2c2c2c;
+  background-color: #fff;
   padding: 2rem;
   border-radius: 10px;
   width: 300px;
   text-align: center;
   font-style: italic;
   transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+  box-shadow: 0 0 5px #000;
 }
 
-.testimonialCard:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0 25px #ff6600;
-  background-color: #000;
+.testimonialCard p {
+  color: #0f0f0f;
 }
 
 .testimonialCard h4 {
-  margin-top: 1rem;
   color: #ff6600;
 }
 
-/* FOOTER */
 .footer {
-  background-color: #111;
+  background-color: #fff;
   color: #fff;
-  padding: 3rem 1rem;
+  padding: 1rem;
   text-align: center;
+  width:90%;
 }
 
-.footerTitle {
-  font-size: 2rem;
-  margin-bottom: 1.5rem;
-}
-
-.footerBtn {
-  background-color: #ff6600;
-  color: white;
-  border: none;
-  padding: 0.75rem 1.5rem;
-  font-size: 1rem;
-  cursor: pointer;
-  border-radius: 5px;
-  transition: all 0.3s ease;
-}
-
-.footerBtn:hover {
-  background-color: #000;
-  border: 2px solid #ff6600;
-}
 
 .footerBottom {
-  margin-top: 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -207,9 +190,15 @@
 
 .social a {
   margin: 0 0.5rem;
-  color: #fff;
+  color: #000;
   text-decoration: none;
   transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social a img {
+  width: 30px;
+  height: 30px;
+  margin-bottom: 5px;
 }
 
 .social a:hover {
@@ -217,8 +206,6 @@
   transform: scale(1.2);
 }
 
-
-/* RESPONSIVE */
 @media (max-width: 1024px) {
   .heroContent h1 {
     font-size: 2.5rem;
