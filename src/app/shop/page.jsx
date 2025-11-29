@@ -46,7 +46,7 @@ const Shop = () => {
   }, [page]);
 
   return (
-  <div className="bg-dark text-light min-vh-100">
+  <div className="bg-light text-dark min-vh-100">
     <div className="container py-5">
       {products.length > 0 ? (
         <div className="row g-4">

@@ -1,8 +1,8 @@
 .ingredient {
-  background-color: #1e2227;
-  border: 1px solid #2f353b; 
+  background-color: #fff;
+  border: 1px solid #000; 
   border-radius: 15px;
-  box-shadow: 0 0px 15px #ff6600;
+  box-shadow: 0 0 5px #000;
   overflow: hidden;
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -43,7 +43,7 @@
 .ingredient__title h3 {
   font-size: 1.25rem;
   font-weight: 600;
-  color: #f5f5f5; 
+  color: #000; 
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -52,11 +52,7 @@
 .ingredient__content .price {
   font-size: 1rem;
   font-weight: 700;
-  color: #fff; 
-}
-
-.ingredient__btn {
-  margin-top: 0rem;
+  color: #008000; 
 }
 
 .btn-white {
@@ -68,12 +64,13 @@
   font-size: 1rem;
   cursor: pointer;
   transition: all 0.3s ease;
+  border: 1px solid #000;
 }
 
 .btn-white:hover {
-  background-color: #ff0000; 
+  background-color: #000; 
   color: #fff; 
-  border-color: #ff6600;
+  border-color: #fff;
 }
 
 @media (max-width: 768px) {
