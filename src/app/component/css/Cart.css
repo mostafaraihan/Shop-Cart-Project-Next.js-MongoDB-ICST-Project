@@ -5,8 +5,8 @@
 }
 
 .cart-product-image img {
-  width: 60px;
-  height: 60px;
+  width: 100px;
+  height: 100px;
   object-fit: cover;
   border-radius: 8px;
 }
@@ -19,8 +19,8 @@
 }
 
 .quantity-buttons button {
-  background: #1f1f1f;
-  color: #fff;
+  background: #fff;
+  color: #000;
   border: none;
   width: 28px;
   height: 28px;
@@ -35,13 +35,14 @@
 }
 
 .quantity-buttons input {
-  width: 50px;
+  width: 60px;
   text-align: right;
   border-radius: 4px;
   border: none;
-  background: #1f1f1f;
-  color: #fff;
-  font-size:20;
+  background: #fff;
+  color: #000;
+  font-size:20px;
+  padding-left: 10px;
 }
 
 .btn-remove {
@@ -60,9 +61,9 @@
 }
 
 .price {
-  color: #ff6600;
-  font-weight:800;
-  font-size: 20px;
+  color: #f00;
+  font-weight: 600;
+  font-size: 25px;
 }
 
 @media (max-width: 768px) {

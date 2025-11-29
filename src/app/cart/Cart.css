@@ -3,27 +3,6 @@ body, .container-fluid {
   color: #e0e0e0;
 }
 
-.table thead.table-secondary th {
-  background-color: #fff !important;
-  color: #000 !important;
-  text-align: center;
-}
-
-.table-hover tbody tr:hover {
-  background-color: #2a2a2a !important;
-  cursor: pointer;
-}
-
-.d-flex.flex-wrap.gap-3 .btn {
-  flex: auto;
-  padding: 8px 16px;
-  font-weight: 600;
-  font-size: 0.9rem; 
-  border-radius: 8px;
-  box-shadow: 0 0 3px #000;
-  transition: transform 0.2s, background-color 0.2s;
-}
-
 .btn-success {
   background-color: #0000ff;
   border: none;
@@ -73,11 +52,12 @@ body, .container-fluid {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: nowrap; /* prevent wrapping on desktop */
-  background-color: #000;
+  flex-wrap: nowrap; 
+  background-color: #fff;
   padding: 25px 30px;
   border-radius: 10px;
   gap: 20px;
+  border: 1px solid #ccc;
 }
 
 .total-section > .total-price {

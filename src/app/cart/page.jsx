@@ -38,7 +38,7 @@ const Cart = () => {
   };
 
   return (
-    <div className="container-fluid bg-dark text-light min-vh-100 py-5">
+    <div className="container-fluid bg-light text-dark min-vh-100 py-5">
       <div className="container">
         <h1 className="text-center mb-5 display-5">Your Shopping Cart</h1>
 
@@ -47,8 +47,8 @@ const Cart = () => {
         ) : (
           <>
             <div className="table-responsive mb-4">
-              <table className="table table-dark table-hover align-middle">
-                <thead className="table-secondary text-dark">
+              <table className="table table-light table-hover align-middle">
+                <thead className="table-secondary text-dark text-center">
                   <tr>
                     <th>Image</th>
                     <th>Product Name</th>
@@ -69,7 +69,7 @@ const Cart = () => {
             <div className="d-flex flex-column flex-md-row justify-content-between align-items-center p-3 rounded total-section">
                 <div className="total-price d-flex justify-content-center">
                 <span><h4>Total: </h4></span>
-                <span className="text-warning"><h4><b>৳</b> {totalPrice.toFixed(2)}</h4></span>
+                <span className="text-danger"><h4><b>৳</b> {totalPrice.toFixed(2)}</h4></span>
               </div>
 
               <div className="d-flex gap-3 ">
