@@ -10,7 +10,7 @@ body, html {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color:#000
+  background-color:#fff
 }
 
 .auth {
@@ -22,7 +22,7 @@ body, html {
   border: 2px solid #ff6600;
   text-align: center;
   color: #fff;
-  box-shadow: 0 0px 25px #fff;
+  box-shadow: 0 0px 5px #000;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
